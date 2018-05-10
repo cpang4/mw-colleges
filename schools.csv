@@ -1,0 +1,39 @@
+Name,City,State,Latitude,Longitude,UGEP,UGP,GEP,GP,Budget,Faculty
+UW-Madison,Madison,Wisconsin,43.076592,-89.412487,"4,167","31,710","1,855","43,336",$144 ,$144 
+UW-Milwaukee,Milwaukee,Wisconsin,43.078263,-87.881969,"2,288","21,375",414,"26,011",$5 ,$73 
+UW-Platteville,Platteville,Wisconsin,42.732371,-90.48726,781,"7,793",0,"8,693",NA,NA
+UW-Eau Claire,Eau Claire,Wisconsin,44.796746,-91.503419,0,"9,981",0,"10,629",NA,NA
+UW-Green Bay,Green Bay,Wisconsin,44.532073,-87.921714,0,"6,758",0,"7,030",NA,NA
+UW-LaCrosse,LaCrosse,Wisconsin,43.816052,-91.231152,266,"9,699",0,"10,516",NA,NA
+Milwaukee School of Engineering,Milwaukee,Wisconsin,43.04405,-87.908448,800,"2,675",0,"2,880",NA,NA
+Marquette,Milwaukee,Wisconsin,43.038222,-87.929755,344,"8,238",208,"11,294",$11 ,$211 
+Purdue University,Lafayette,Indiana,40.423705,-86.921195,"8,918","30,043","3,792","40,451",$261 ,$654 
+University of Michigan,Ann Arbor,Michigan,42.278044,-83.738224,"9,423","28,983","3,687","44,718",$277 ,$721 
+University of Illinois,Champaign,Illinois,40.101952,-88.227161,"9,145","33,932","2,264","46,951",$239 ,$542 
+Ohio State University,Columbus,Ohio,40.014191,-83.030914,"8,171","45,831","1,812","59,482",$153 ,$606 
+Missouri University Science & Tech,Rolla,Missouri,37.952827,-91.77382,"1,200","6,909","1,279","8,838",$25 ,$138 
+Northwestern University,Evanston,Illinois,42.056459,-87.675267,"1,900","8,353","2,141","21,208",$115 ,$624 
+Univ. of Minnesota Twin Cities,St. Paul,Minnesota,44.97399,-93.227729,"5,526","34,871","1,910","51,580",$130 ,$550 
+Iowa State University,Des Moines,Iowa,42.026619,-93.646465,"8,255","30,671","1,450","36,350",$99 ,$428 
+Michigan Tech,Houghton,Michigan,47.116775,-88.546022,"1,342","5,829",925,"7,270",$27 ,$194 
+Illinois Institute of Technology,Chicago,Illinois ,41.834873,-87.627006,NA,"2,944","1,587","7,730",$18 ,$187 
+University of Cincinnati,Cincinnati,Ohio,39.132922,-84.51495,NA,"25,860",758,"36,637",$18 ,$140 
+Washington University,St. Louis,Missouri,38.64879,-90.310796,NA,"7,540","1,177","15,032",$25 ,$277 
+University of Notre Dame,South Bend,Indiana,41.705572,-86.235339,"1,203","8,530",544,"12,393",$53 ,$408 
+Kansas State University,Manhattan,Kansas,39.197444,-96.584725,NA,"19,472",438,"23,779",$17 ,$138 
+Michigan State University,Lansing,Michigan,42.701848,-84.482172,"2,557","39,090",852,"50,344",$56 ,$283 
+Case Western University,Cleveland,Ohio,41.504341,-81.608384,"1,481","5,152",705,"11,664",$42 ,$380 
+University of Nebraska,Lincoln,Nebraska,40.820197,-96.700476,NA,"20,833",655,"25,897",$35 ,$169 
+University of Illinois,Chicago,Illinois,41.869304,-87.64745,"1,417","17,959","1,467","29,120",$31 ,$281 
+University of Missouri-Columbia,Columbia,Missouri,38.940381,-92.327738,NA,"25,898",531,"33,266",$18 ,$180 
+Wayne State University,Detroit,Michigan,42.359139,-83.066546,"3,860","17,280","1,337","27,298",$12 ,$115 
+University of Toledo,Toledo,Ohio,41.658031,-83.61407,NA,"16,247",382,"20,648",$8 ,$119 
+University of Iowa,Iowa City,Iowa,41.662696,-91.5549,NA,"24,476",362,"32,011",$53 ,$530 
+Vanderbilt,Nashville,Tennesee,36.144703,-86.802655,"1,489","6,871",517,"12,587",$78 ,$464 
+University of Dayton,Dayton,Ohio,39.7393,-84.179967,NA,"8,330",723,"10,803",$125 ,"$1,765 "
+University of Kansas,Lawrence,Kansas,38.954344,-95.255796,NA,"19,262",633,"27,565",$15 ,$123 
+Indiana University,Indianapolis,Indiana,39.773883,-86.176339,"3,000","21,748",393,"49,695",$7 ,$173 
+Wichita State University,Wichita,Kansas,37.719393,-97.292869,NA,"11,823",590,"14,474",$57 ,$927 
+University of Akron,Akron,Ohio,41.076655,-81.511339,NA,"17,416",371,"21,099",$13 ,$146 
+McMaster University,Hamilton,Ontario,43.260879,-79.919225,NA,NA,NA,NA,NA,NA
+University of Waterloo,Waterloo,Ontario,43.472285,-80.544858,NA,NA,NA,NA,NA,NA
