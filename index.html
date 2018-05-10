@@ -45,17 +45,17 @@ html, body {
 
 <div id="map"></div>
 <div id='navigation' class='menu-ui'>
-  <a href="#" data-position='41.86549902849592,-88.60604699999999', zoom ='5'><b>Reset</b></a>
-  <a href='#' data-position='43.36667409739131, -80.23204149999998', zoom='10'>Canada</a>
-  <a href='#' data-position='41.144298130398525, -88.49551661817179', zoom='8'>Illinois</a>
-  <a href='#' data-position='40.82987002898068, -87.20175', zoom='7'>Indiana</a>
-  <a href='#' data-position='41.84491624854655, -92.6006825', zoom='8'>Iowa</a>
-  <a href="#" data-position='39.28695306049923, -96.27433250000001', zoom='7'>Kansas</a>
-  <a href='#' data-position='42.28933851525898, -83.63892946722274', zoom='8'>Michigan</a>
-  <a href='#' data-position='38.44829328087111, -91.31926699999997', zoom='8'>Missouri</a>
-  <a href='#' data-position='40.11173171980746, -83.01314450000001', zoom='8'>Ohio</a>
-  <a href="#" data-position='36.519705907682926, -87.46516275113981', zoom='8'>Tennessee</a>
-  <a href='#' data-position='44.611160962389185, -89.63328831250004', zoom='7'>Wisconsin</a>
+  <a href="#" data-position='41.86549902849592,-88.60604699999999', zoom ='5', name='Reset'><b>Reset</b></a>
+  <a href='#' data-position='43.36667409739131, -80.23204149999998', zoom='10', name='Ontario'>Canada</a>
+  <a href='#' data-position='41.144298130398525, -88.49551661817179', zoom='8', name='Illinois'>Illinois</a>
+  <a href='#' data-position='40.82987002898068, -87.20175', zoom='7', name='Indiana'>Indiana</a>
+  <a href='#' data-position='41.84491624854655, -92.6006825', zoom='8', name='Iowa'>Iowa</a>
+  <a href="#" data-position='39.28695306049923, -96.27433250000001', zoom='7', name='Kansas'>Kansas</a>
+  <a href='#' data-position='42.28933851525898, -83.63892946722274', zoom='8', name='Michigan'>Michigan</a>
+  <a href='#' data-position='38.44829328087111, -91.31926699999997', zoom='8', name='Missouri'>Missouri</a>
+  <a href='#' data-position='40.11173171980746, -83.01314450000001', zoom='8', name='Ohio'>Ohio</a>
+  <a href="#" data-position='36.519705907682926, -87.46516275113981', zoom='8', name='Tennessee'>Tennessee</a>
+  <a href='#' data-position='44.611160962389185, -89.63328831250004', zoom='7', name='Wisconsin'>Wisconsin</a>
 </div>
 <!-- Replace the value of the key parameter with your own API key. -->
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
@@ -88,7 +88,8 @@ function initMap() {
     + "<b><br>Budget/Faculty Member (in K): </b>" + location.faculty;
   	
   	var marker = new google.maps.Marker({
-      position: {lat: location.lat, lng: location.lng}
+      position: {lat: location.lat, lng: location.lng},
+      title: location.state
     });
 
     marker.addListener('click', function() {
@@ -107,19 +108,48 @@ function initMap() {
 
   });
 
+  function filterMarkers(category){
+
+
+    var newMarkers = [];
+    if (category === "Reset"){
+      return markers;
+    }
+    for (var i = 0; i < markers.length; i++){
+      if (markers[i].title === category){
+        newMarkers.push(markers[i]);
+      }
+    }
+
+    return newMarkers;
+  }
+
   // Add a marker clusterer to manage the markers.
-  var markerCluster = new MarkerClusterer(map, markers,
+  var markerCluster = new MarkerClusterer(map, filterMarkers("Reset"),
       {maxZoom: 8, imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 
 
   document.getElementById('navigation').onclick = function(e) {
     var pos = e.target.getAttribute('data-position');
     var zoom = e.target.getAttribute('zoom');
+    var category = e.target.getAttribute('name');
+
+
+
+    markerCluster.clearMarkers();
+
+    var newMarkers = filterMarkers(category);
+
+    markerCluster.addMarkers(newMarkers);
+
+    markerCluster.redraw();
+
     if (pos) {
         var loc = pos.split(',');
         map.setZoom(parseInt(zoom));
         map.setCenter({lat: parseFloat(loc[0]), lng: parseFloat(loc[1])});
     }
+
   }
 }
 
