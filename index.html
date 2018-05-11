@@ -70,11 +70,16 @@ function initMap() {
     streetViewControl: false
   });
 
-  map.addListener('click', function(){
-    console.log(map.getZoom(), map.getCenter().toString());
-  })
 
   var infowindow = null;
+
+  map.addListener('click', function(){
+    if (infowindow){
+      infowindow.close();
+    }
+  });
+
+  var currOpen = "";
 
   var markers = locations.map(function(location, i) {
 
@@ -99,10 +104,19 @@ function initMap() {
 
     	infowindow = new google.maps.InfoWindow({
 	    	content: contentString
-		});
-		infowindow.open(map, marker);
+		  });
+
+    if (currOpen != location.name){
+      infowindow.open(map, marker);
+      currOpen = location.name;
+    }
+
+    else if (currOpen === location.name){
+      infowindow.close();
+      currOpen = "";
+    }
         
-    });
+  });
 
     return marker;
 
