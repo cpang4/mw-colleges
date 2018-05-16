@@ -161,8 +161,9 @@ function initMap(locations) {
     var pos = e.target.getAttribute('data-position');
     var zoom = e.target.getAttribute('zoom');
     var category = e.target.getAttribute('name');
-
-
+    if (infowindow){
+      infowindow.close();
+    }
 
     markerCluster.clearMarkers();
 
