@@ -61,7 +61,21 @@ html, body {
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
-function initMap() {
+function loadData(){
+
+  var locations = [];
+
+  d3.csv("schools.csv", function(data){
+    data.forEach(function(d){
+      locations.push({"name": d.Name, "state":d["State"], "city":d["City"], "lat":+d["Latitude"], "lng":+d["Longitude"], "ugep":d["UGEP"], "ugp":d["UGP"], "gep":d["GEP"], "gp":d["GP"], "budget":d["Budget"], "faculty":d["Faculty"]})
+    })
+
+    initMap(locations);
+
+  });
+}
+
+function initMap(locations) {
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 5,
@@ -165,17 +179,9 @@ function initMap() {
     }
 
   }
+
 }
-
-  var locations = [];
-
-  d3.csv("schools.csv", function(data){
-    data.forEach(function(d){
-      locations.push({"name": d.Name, "state":d["State"], "city":d["City"], "lat":+d["Latitude"], "lng":+d["Longitude"], "ugep":d["UGEP"], "ugp":d["UGP"], "gep":d["GEP"], "gp":d["GP"], "budget":d["Budget"], "faculty":d["Faculty"]})
-    })
-  });
-
 </script>
 <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2_1XsE0cOCAVUBbYSk14iqLsbVEGno7c&callback=initMap">
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2_1XsE0cOCAVUBbYSk14iqLsbVEGno7c&callback=loadData">
 </script>
